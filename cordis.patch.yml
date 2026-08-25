@@ -1,0 +1,13 @@
+# dsh-compact-chat-ui bundle patch
+#
+# Installed through the official CLI:
+#
+#   dsh plugin --profile web add dsh-compact-chat-ui-0.5.0.tgz
+#
+# The command sees this declaration, appends dsh-compact-chat-ui to the
+# profile's bundle stack, and merges this patch (a single `insert` of the
+# plugin row). The host half is a no-op cordis plugin: all work happens in
+# the client bundle (typography rescale + a settings card).
+- insert:
+    - id: compact-chat-ui
+      name: 'dsh-compact-chat-ui'
