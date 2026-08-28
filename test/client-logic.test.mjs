@@ -146,11 +146,10 @@ const checks = [
 	["li margin-top 6px → 3px", css.includes("._markdown_1nba0_5 li:not(:first-child){margin-top:3px !important;}")],
 	["marker line-height reset to inherit", css.includes("._markdown_1nba0_5 li::marker{line-height:inherit !important;}")],
 	["message body flex gap 16px → 8px", css.includes(".ltnGdq_body{gap:8px !important;}")],
-	// settings section: css tag injected + section registered (Desktop 2.0.2
-	// turned settings.plugin.item into a keyed slot a client-only plugin
-	// cannot join; settings.section takes a plain id)
+	// settings card: css tag injected + keyed registration in the Plugins tab
+	// (the host half registers the matching "dsh-compact-chat-ui" namespace)
 	["card css injected", (appended[0]?.textContent ?? "").includes(".ccui_card{")],
-	["settings card registered in settings.section", slotRegistrations.length === 1 && slotRegistrations[0].slot === "settings.section" && slotRegistrations[0].entry.id === "compact-chat-ui" && typeof slotRegistrations[0].entry.component === "function" && typeof slotRegistrations[0].entry.label === "function"],
+	["settings card registered keyed in settings.plugin.item", slotRegistrations.length === 1 && slotRegistrations[0].slot === "settings.plugin.item" && slotRegistrations[0].entry.key === "dsh-compact-chat-ui" && slotRegistrations[0].entry.locale === "dsh-compact-chat-ui" && typeof slotRegistrations[0].entry.component === "function"],
 ];
 
 // clipboard shim (exported for tests): three scenarios against fake nav/doc
