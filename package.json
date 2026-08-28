@@ -1,6 +1,6 @@
 {
   "name": "dsh-compact-chat-ui",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "DSH web plugin: shrink chat content density — markdown typography tokens, message-body spacing and the user bubble, live-adjustable from a card under Settings → Plugins. Host half registers the settings namespace that makes the Plugins tab dispatch the card.",
   "type": "module",
   "license": "MIT",
